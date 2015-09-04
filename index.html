@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>查找兼职</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,minimal-ui" />
+	<meta name="apple-mobile-web-app-capale" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no,email=no" />
+
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+	<header class="topbar">
+		<a class="ch_city" href="javascript:;" id="city_palce">重庆</a>
+		<div class="title">
+			<a class="cur" href="index.html">兼职</a>
+			<a class="" href="internship.html">实习</a>
+		</div>
+	</header>
+	 <!--<div class="search_box">
+		<form>
+			<div class="search">
+				<input type="text" value="" placeholder="请输入关键词" autocomplete="no" name="keyword" />
+				<div class="tip">
+					<img src="img/search.png" width="15" height="15" alt="搜索" />
+				</div>
+			</div>
+		</form>
+	</div>-->
+	<ul id="content" class="partime">
+	</ul>
+	<!-- <a href="sms:+(86)18883284505&body=[你好]">发送</a> -->
+</body>
+<script type="text/javascript" src="scripts/jquery/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="scripts/AjaxObj.js"></script>
+<script type="text/javascript" src="scripts/queryString.js"></script>
+<script type="text/javascript" src="scripts/getInfo.js"></script>
+<script type="text/javascript" src="scripts/gettime.js"></script>
+<script>
+	var page = 1;
+	var currentpage = 0;
+	window.onload = getInfo();
+
+	window.onscroll = function(){
+//        var view = document.documentElement.scrollTop == 0 ? document.body.clientHeight : document.documentElement.clientHeight;//元素的高度，可视高度
+		var div = document.documentElement.scrollTop == 0 ? document.body.scrollTop : document.documentElement.scrollTop;//滚动条高度
+		var _div = document.documentElement.scrollHeight;//内容高度
+		if(_div - getHieght() == div) {
+			page += 1;
+				$.get('/heihei.php/home/jobnet/fjoblist', {page:page, count: 20}, function (data) {
+					if (data.data) {
+						currentpage++;
+						if(currentpage > ((data.data.total/20))){
+							return false;
+						}
+                        console.log(currentpage);
+						for (var i = 0; i < data.data.data.length; i++) {
+							getJob(data.data.data[i]);
+						}
+						return false;
+					} else {
+						return false;
+					}
+				});
+			}else{
+			console.log("not yet");
+		}
+	}
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

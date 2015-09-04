@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>兼职详情</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,minimal-ui" />
+    <meta name="apple-mobile-web-app-capale" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no,email=no" />
+    <!-- reset.css -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/detail.css" />
+</head>
+<body>
+
+<footer>
+    <div id="sc_box"><a href="javascript:;">拨打电话</a></div>
+    <div id="ts_box"><a href="javascript:;">发送短信</a></div>
+    <!--<a id="baoming" href="#">-->
+        <!--<div class="bm_btn active"> 投诉</div>-->
+    <!--</a>-->
+</footer>
+<script type="text/javascript" src="scripts/jquery/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="scripts/queryString.js"></script>
+<script type="text/javascript" src="scripts/gettime.js"></script>
+<script>
+//    var city = GetQueryString('city');
+    var jobid = GetQueryString('jobid');
+    console.log(jobid);
+    $(document).ready(function(){
+        $.get('/heihei.php/home/jobnet/fitem',{id:jobid},function(json){
+            if(json.status == 200){
+                loadInfo(json.data)
+            }else{
+                alert(json);
+            }
+        });
+    });
+
+    function loadInfo(data){
+        var time = getTime(data.time);
+        console.log(time);
+        var endtime = getTime(data.endtime);
+        console.log(endtime);
+        if(data.num == 0 || data.num == null){
+            data.jobApplyNum = "";
+        }
+        if(data.tel){
+            var phone = document.getElementById('sc_box'),
+                    sms = document.getElementById('ts_box');
+            phone.firstChild.setAttribute("href","tel:"+data.tel);
+            sms.firstChild.setAttribute('href',"sms:"+data.tel);
+        }else{
+            $('#sc_box').hide();
+            $("#ts_box").hide();
+        }
+        $('body').append(function(){
+            var str = "<div class=\"pt-detail\">" +
+                    "<div id=\"info\">" +
+                    "<header>" +
+                    "<a class=\"back\" href=\"index.html\"> < 返回</a>" +
+                    "<div class=\"title\">诚客</div>" +
+                    "</header>" +
+                    "<div class=\"title_box\">" +
+                    "<div class=\"icon a7\">"+time[1]+"-"+time[2]+"</div>" +
+                    "<p>"+data.title+"</p>" +
+                    "</div>" +
+                    "<div class=\"info_list\">" +
+                    "<table>" +
+                    "<tr>" +
+                    "<td class=\"list_item\">工作名称：</td>" +
+                    "<td class=\"list_con\">"+data.title+"</td>" +
+                    "</tr>" +
+                    "<tr>" +
+                    "<td class=\"list_item\">薪资：</td>" +
+            "<td class=\"list_con\">"+data.money+"</td>" +
+            "</tr>" +
+                    "<tr>" +
+                    "<td class=\"list_item\">需求人数：</td>" +
+            "<td class=\"list_con\">"+data.num+"</td>" +
+            "</tr>" +
+            "<tr>" +
+            "<td class=\"list_item\">工作地点：</td>" +
+            "<td class=\"list_con\">"+data.address+"</td>" +
+            "</tr>" +
+            "<tr>" +
+            "<td class=\"list_item\">结束时间：</td>" +
+            "<td class=\"list_con\">"+endtime.join("-")+"</td>" +
+            "</tr>" +
+            "<tr>" +
+            "<td class=\"list_item\">联系电话：</td>" +
+            "<td class=\"list_con\">"+data.tel+"</td>" +
+            "</tr>" +
+                    "<tr>" +
+                    "<td class=\"list_item\">工作简介：</td>" +
+                    "<td class=\"list_con\">"+data.content+"</td>" +
+                    "</tr>" +
+            "</table>" +
+            "</div>" +
+            "</div>" +
+            "</div>";
+                            return str;
+        });
+    }
+
+
+</script>
+</body>
+</html>

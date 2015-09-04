@@ -1,0 +1,50 @@
+header{
+	background:#4fd9e3 none repeat scroll 0 0;
+	border-bottom:1px solid #dbdbdb;
+	box-shadow: 0 0 2px #dbdbdb;
+	height:44px;
+	overflow:hidden;
+	position: relative;
+	width:100%;
+}
+header .close{
+	position: absolute;
+	color: #fff;
+	display: block;
+	font-size:16px;
+	left:10px;
+	line-height: 44px;
+	padding:0 15px;
+	top:0;
+	text-decoration: none;
+}
+header .title{
+	color: :#fff;
+	font-size:16px;
+	line-height: 44px;
+	margin:0 auto;
+	overflow:hidden;
+	text-align: center;
+	text-overflow:ellipsis;
+	/*不进行换行*/
+	white-space: nowrap;
+	width:65%;
+	color:#fff;
+}
+#city_list{
+	background:#fff none repeat scroll 0 0 ;
+	width:100%;
+}
+#city_list li{
+	display: block;
+	width:100%;
+	border-bottom: 1px solid #ccc;
+}
+#city_list li a{
+	display: block;
+	line-height: 24px;
+	height:24px;
+	padding:10px;
+	text-decoration: none;
+	color:#666;
+}

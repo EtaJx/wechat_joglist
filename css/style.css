@@ -1,0 +1,233 @@
+a{
+	text-decoration: none;
+}
+header.topbar{
+	background:#ff7a4d none repeat scroll 0 0;
+	border-bottom:1px solid #dbdbdb;
+	height:44px;
+	line-height: 44px;
+	position:relative;
+	width:100%;
+	z-index: 100;
+	overflow:hidden;
+}
+header.topbar a{
+	color: #fff;
+}
+header.topbar a.ch_city:visited{
+	color: #fff;
+}
+header.topbar .ch_city{
+	color:#fff;
+	display: block;
+	float:left;
+	font-size:16px;
+	position: absolute;
+	left:10px;
+	line-height: 44px;
+	padding:0 10px;
+	top:0;
+}
+header.topbar .title{
+	background:#ff7a4d none repeat scroll 0 0;
+	border:1px solid #fff;
+	border-radius: 5px;
+	height:25px;
+	margin:8px auto 0;
+	overflow: hidden;
+	width:120px;
+}
+header.topbar .title a{
+	color:#fff;
+	display: block;
+	float: left;
+	font-size:13px;
+	line-height: 25px;
+	padding:0 17px;
+}
+header.topbar .title a.cur{
+	background: #fff none repeat scroll 0 0;
+	color:#ff7a4d;
+}
+header.topbar .second-title{
+	color:#fff;
+	font-size:16px;
+	line-height: 44px;
+	margin:0 auto;
+	overflow: hidden;
+	text-align:center;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	width:65%;
+}
+
+.search_box{
+	background:#fff none repeat scroll 0 0;
+	height:44px;
+	margin:5px 0;
+	overflow: hidden;
+	position: relative;
+	width:100%;
+	z-index:100;
+}
+.search_box .search{
+	background:#f9f9f9 none repeat scroll 0 0;
+	border:1px solid #ddd;
+	border-radius: 12px;
+	height:24px;
+	margin:9px auto 0;
+	position: relative;
+	width:88%;
+	z-index:101;
+}
+.search_box .search .tip{
+	left:20px;
+	line-height:22px;
+	position: absolute;
+	top:0;
+	vertical-align: middle;
+}
+.search_box .search .tip img{
+	vertical-align: middle;
+}
+.search_box .search .tip span{
+	color:#ddd;
+	margin-left:5px;
+	vertical-align: middle;
+}
+.search_box .search input{
+	outline:none;
+	background:rgba(0,0,0,0) none repeat scroll 0 0;
+	border:0 none;
+	border-radius:12px;
+	box-sizing:border-box;
+	font-size:14px;
+	padding:4px 11px 0 40px;
+	width:92%;
+}
+
+#content.partime{
+
+}
+#content.partime li{
+	background-color:#fff;
+	border-bottom:1px solid #ddd;
+	height:60px;
+	width:100%;
+}
+#content.partime li a{
+	display: block;
+	overflow:hidden;
+	padding:8px 10px;
+	position:relative;
+	height:50px;
+}
+#content.partime li a:visited{
+	color:#aaa;
+}
+#content.partime li a .icon{
+	background: #fff none repeat scroll 0 0;
+	border:1px solid #ff0000;
+	border-radius:20px;
+	font-size:12px;
+	color:#444;
+	float:left;
+	height:40px;
+	line-height:40px;
+	margin-top:1px;
+	text-align:center;
+	vertical-align: middle;
+	width:40px;
+}
+#content.partime li a .icon.a1{
+	border-color:#5856d6;
+}
+#content.partime li a .icon.a2{
+	border-color:#007aff;
+}
+#content.parttime li a .icon.a3 {
+    border-color: #34aadc;
+}
+#content.parttime li a .icon.a4 {
+    border-color: #5ac8fa;
+}
+#content.parttime li a .icon.a5 {
+    border-color: #4cd964;
+}
+#content.parttime li a .icon.a6 {
+    border-color: #ff2d55;
+}
+#content.parttime li a .icon.a7 {
+    border-color: #ff3b30;
+}
+#content.parttime li a .icon.a8 {
+    border-color: #ff9500;
+}
+#content.parttime li a .icon.a9 {
+    border-color: #fc0;
+}
+#content.parttime li a .icon.a0 {
+    border-color: #8e8e93;
+}
+#content.partime li a .txt {
+	float:left;
+	margin-left:10px;
+	margin-top:3px;
+	max-width:60%;
+	position:relative;
+}
+#content.partime li a .txt .tit{
+	display: block;
+	float:left;
+	font-size:16px;
+	line-height: 16px;
+	max-width:100%;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+#content.partime li a .txt .tit_sta{
+	color:#ff4d4d;
+	font-size:11px;
+	line-height:11px;
+	position: absolute;
+	right:-13px;
+	top:0;
+	vertical-align: top;
+}#content.partime li a .label{
+	bottom:15px;
+	color:#aaa;
+	font-size:12px;
+	height:12px;
+	left:62px;
+	line-height:12px;
+	position: absolute;
+}
+#content.partime li a .label .flag{
+	color:#aaa;
+	font-size:12px;
+	margin-left:5px;
+}
+#content.partime li a .oth{
+	float:right;
+	height:40px;
+	margin-top:5px;
+	text-align:right;
+}
+#content.partime li a .oth p{
+	color:#ff7a4d;
+	font-size:12px;
+	line-height:12px;
+}
+#content.partime li a .oth .time{
+	color:#aaa;
+	font-size:12px;
+	line-height:12px;
+	margin-top:10px;
+	text-align: right;
+}
+#content.partime li a .oth .time img{
+	margin-right:3px;
+}
+
+
